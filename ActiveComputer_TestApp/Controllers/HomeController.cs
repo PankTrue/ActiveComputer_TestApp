@@ -45,8 +45,20 @@ namespace ActiveComputer_TestApp.Controllers
         }
 
 
-        public IActionResult Second()
+        public IActionResult Second(LinkedList<int> arr1, LinkedList<int> arr2)
         {
+            var result = new LinkedList<int>();
+
+            var iterator1 = arr1.GetEnumerator();
+            var iterator2 = arr2.GetEnumerator();
+
+            while (iterator1.MoveNext() && iterator2.MoveNext())
+            {
+                result.AddLast(iterator1.Current + iterator2.Current);
+            } 
+
+            ViewBag.Result = result;
+
             return View();
         }
 

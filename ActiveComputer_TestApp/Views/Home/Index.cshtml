@@ -9,6 +9,7 @@
 <div>
     <ul style="list-style: none;">
         <li> <a class="btn btn-primary" href="@Url.Action("First", new {arr = new[] { 100, 87, 85, 102, 103, 101 }})">First test</a> </li>
+        <li> <a class="btn btn-primary" href="@Url.Action("Second", new {arr1 = new[] { 100, 87, 85, 82}, arr2=new[] { 256, 128, 64, 32 }})">Second test</a> </li>
         <li> <a class="btn btn-primary" asp-controller="Home" asp-action="Third" asp-route-str="somestr">Third test</a> </li>
     </ul>
 </div>
