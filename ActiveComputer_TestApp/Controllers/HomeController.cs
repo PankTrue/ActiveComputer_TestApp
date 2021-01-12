@@ -51,8 +51,22 @@ namespace ActiveComputer_TestApp.Controllers
         }
 
 
-        public IActionResult Third()
+        public IActionResult Third(string str)
         {
+            bool isPalindrom = true;
+
+            for (var i = 0; i < str.Length / 2; i++)
+            {
+                if (str[i] != str[str.Length - i - 1])
+                {
+                    isPalindrom = false;
+                    break;
+                }
+            }
+
+            ViewBag.Str = str;
+            ViewBag.isPalindrom = isPalindrom;
+
             return View();
         }
 
