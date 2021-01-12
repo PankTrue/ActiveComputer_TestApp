@@ -18,6 +18,47 @@ namespace ActiveComputer_TestApp.Controllers
             _logger = logger;
         }
 
+        public IActionResult First(int[] arr)
+        {
+            int result = 0;
+            bool isSecond = false;
+
+            foreach (var element in arr)
+            {
+                if (element % 2 != 0)
+                {
+                    if (isSecond)
+                    {
+                        result += element;
+                        isSecond = !isSecond;
+                    }
+                    else
+                    {
+                        isSecond = !isSecond;
+                    }
+                }
+            }
+
+            ViewBag.Result = Math.Abs(result);
+
+            return View();
+        }
+
+
+        public IActionResult Second()
+        {
+            return View();
+        }
+
+
+        public IActionResult Third()
+        {
+            return View();
+        }
+
+
+
+
         public IActionResult Index()
         {
             return View();
